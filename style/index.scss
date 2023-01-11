@@ -1,7 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 $myGreen: #4BBA38;
 
-body{
-    background-color: $myGreen;
+html{
+    cursor: none;
 }
+
+body{
+    background-color: white;
+    cursor: url("/assets/Mediamodifier-Design.svg");
+    overflow-x: hidden;
+}
+
+.cursor{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background-color: $myGreen;
+    opacity: 0.8;
+    border: 1px solid white;
+    border-radius: 50%;
+    position: absolute;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
+    pointer-events: none;
+
+}
+
+.firstSec{
+    height: 100vh;
+    align-items: center;
+    padding: 0 5em;
+    
+    .qoute{
+        font-size: 6em;
+        font-family: 'Poppins', sans-serif;
+        line-height: 90%;
+        font-weight: 600;
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        align-content: center;
+        
+
+        p:nth-child(5) {
+            color: $myGreen;
+        }
+
+        p:nth-child(3){
+            color: $myGreen;
+        }
+    }
+  }
 
 
