@@ -9,6 +9,15 @@ body {
   background-color: white;
   cursor: url("/assets/Mediamodifier-Design.svg");
   overflow-x: hidden;
+  padding: 0 6em;
+}
+
+.navbar {
+  margin: 1em 0;
+}
+.navbar li {
+  margin: 0 1em;
+  font-weight: 500;
 }
 
 .cursor {
@@ -27,8 +36,8 @@ body {
 
 .firstSec {
   height: 100vh;
+  background-color: antiquewhite;
   align-items: center;
-  padding: 0 5em;
 }
 .firstSec .qoute {
   font-size: 6em;
@@ -37,8 +46,8 @@ body {
   font-weight: 600;
   height: 100%;
   width: 100%;
-  align-items: center;
-  align-content: center;
+  display: flex;
+  justify-content: center;
 }
 .firstSec .qoute p:nth-child(5) {
   color: #4BBA38;
