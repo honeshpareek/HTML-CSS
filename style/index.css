@@ -11,34 +11,35 @@ body {
   overflow-x: hidden;
 }
 
+body::-webkit-scrollbar {
+  width: 1em;
+}
+
 .introduction {
+  opacity: 1;
   display: flex;
   height: 100vh;
   width: 100vw;
   position: fixed;
   z-index: 2;
   background-color: white;
-}
-.introduction .introduction::after, .introduction::before {
-  display: none;
-  -webkit-animation-delay: 3s;
-  -webkit-animation-name: display;
-  -webkit-animation: forwards;
-  -webkit-animation-duration: 1;
-  animation-name: display;
-  animation-delay: 3s;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  animation: forwards;
+  -webkit-animation: display 2s forwards 8s ease-in;
+          animation: display 2s forwards 8s ease-in;
 }
 @-webkit-keyframes display {
-  0%, 100% {
-    display: none;
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 @keyframes display {
-  0%, 100% {
-    display: none;
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 .introduction .content {
@@ -200,26 +201,35 @@ body {
   height: 80%;
   width: 100%;
 }
-.secondSec .wrapper div {
-  margin: 0.3em;
+.secondSec .wrapper .left, .secondSec .wrapper .right {
+  margin: 0.3rem;
+  overflow: hidden;
+  position: relative;
 }
 .secondSec .wrapper .overlay {
-  display: block;
   position: absolute;
+  left: 100%;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  width: 0;
   height: 100%;
+  transition: 0.5s ease;
+}
+.secondSec .wrapper .left:hover, .secondSec .wrapper .right:hover, .secondSec .wrapper .overlay {
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  left: 0;
 }
 .secondSec .wrapper .left {
   height: 100%;
-  width: 100%;
+  width: 50%;
   background: url("https://images.unsplash.com/photo-1509343256512-d77a5cb3791b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
   background-repeat: no-repeat;
   background-size: cover;
 }
 .secondSec .wrapper .right {
   height: 100%;
-  width: 100%;
+  width: 50%;
   background: url("https://images.unsplash.com/photo-1495121553079-4c61bcce1894?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzV8fHBob3RvZ3JhcGh5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60");
   background-repeat: no-repeat;
   background-size: cover;

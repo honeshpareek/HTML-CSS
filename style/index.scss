@@ -13,34 +13,42 @@ body{
     cursor: url("/assets/Mediamodifier-Design.svg");
     overflow-x: hidden;
 }
+body::-webkit-scrollbar {
+  width: 1em;
+}
 
 .introduction{
+  opacity: 1;
     display: flex;
     height: 100vh;
     width: 100vw;
     position: fixed;
     z-index: 2;
     background-color: white;
-    
+    animation: display 2s forwards 8s ease-in;
+    // animation: display 1s forwards 3s ease-out;
+    // -webkit-animation: display 1s forwards 3s ease-out;
 
-    &::after, &::before{
-      display: none;
-    -webkit-animation-delay: 3s;
-    -webkit-animation-name: display;
-    -webkit-animation: forwards;
-    -webkit-animation-duration: 1 ;
-    animation-name: display ;
-    animation-delay: 3s;
-    animation-duration: 1s;
-    animation: forwards;
-    }
+    // &::after, &::before{
+    //   opacity: 0;
+    // -webkit-animation-delay: 3s;
+    // -webkit-animation-name: display;
+    // -webkit-animation: forwards;
+    // -webkit-animation-duration: 1 ;
+    // animation-name: display ;
+    // animation-delay: 3s;
+    // animation-duration: 1s;
+    // animation: forwards;
+    // }
 
     @-webkit-keyframes display {
-      0%, 100% {display: none;}
+      0% {opacity: 1;} 
+      100% {opacity: 0;}
     }
-    
+
     @keyframes display{
-      0%, 100% {display: none;}
+      0%{opacity: 1;}
+      100% {opacity: 0;}
     }
     .content {
         position: absolute;
@@ -49,36 +57,36 @@ body{
         transform: translate(-50%, -50%);
         height: 160px;
         overflow:hidden;
-        
+
         font-family: 'Lato', sans-serif;
         font-size: 2em;
         color: black;
-        
+
         &__container {
           font-weight: 600;
           overflow: hidden;
           height: 40px;
           padding: 0 40px;
-      
+
           // &:before {
           //   content: '[';
           //   left: 0;
           // }
-      
+
           // &:after {
           //   content: ']';
           //   position: absolute;
           //   right: 0;
           // }
-      
+
           &:after, &:before {
             position: absolute;
             top: 0;
-            
+
             color: #16a085;
             font-size: 7rem;
             line-height: 20rem;
-            
+
             -webkit-animation-name: opacity;
             -webkit-animation-duration: 2s;
             -webkit-animation-iteration-count: infinite;
@@ -86,19 +94,19 @@ body{
             animation-duration: 2s;
             animation-iteration-count: infinite;
           }
-      
+
           &__list {
             margin-top: 0;
             text-align: center;
             list-style: none;
-            
+
             -webkit-animation-name: change;
             -webkit-animation-duration: 10s;
             -webkit-animation-iteration-count: infinite;
             animation-name: change;
             animation-duration: 10s;
             animation-iteration-count: infinite;
-      
+
             &__item {
               line-height:1.5em;
               margin:0;
@@ -106,12 +114,12 @@ body{
           }
         }
       }
-      
+
       @-webkit-keyframes opacity {
         0%, 100% {opacity:0;}
         50% {opacity:1;}
       }
-      
+
       @-webkit-keyframes change {
         0%, 12.66%, 100% {transform:translate3d(0,0,0);}
         16.66%, 29.32% {transform:translate3d(0,-25%,0);}
@@ -120,12 +128,12 @@ body{
         66.64%,79.3% {transform:translate3d(0,-50%,0);}
         83.3%,95.96% {transform:translate3d(0,-25%,0);}
       }
-      
+
       @-o-keyframes opacity {
         0%, 100% {opacity:0;}
         50% {opacity:1;}
       }
-      
+
       @-o-keyframes change {
         0%, 12.66%, 100% {transform:translate3d(0,0,0);}
         16.66%, 29.32% {transform:translate3d(0,-25%,0);}
@@ -134,12 +142,12 @@ body{
         66.64%,79.3% {transform:translate3d(0,-50%,0);}
         83.3%,95.96% {transform:translate3d(0,-25%,0);}
       }
-      
+
       @-moz-keyframes opacity {
         0%, 100% {opacity:0;}
         50% {opacity:1;}
       }
-      
+
       @-moz-keyframes change {
         0%, 12.66%, 100% {transform:translate3d(0,0,0);}
         16.66%, 29.32% {transform:translate3d(0,-25%,0);}
@@ -148,12 +156,12 @@ body{
         66.64%,79.3% {transform:translate3d(0,-50%,0);}
         83.3%,95.96% {transform:translate3d(0,-25%,0);}
       }
-      
+
       @keyframes opacity {
         0%, 100% {opacity:0;}
         50% {opacity:1;}
       }
-      
+
       @keyframes change {
         0%, 12.66%, 100% {transform:translate3d(0,0,0);}
         16.66%, 29.32% {transform:translate3d(0,-25%,0);}
@@ -162,23 +170,23 @@ body{
         66.64%,79.3% {transform:translate3d(0,-50%,0);}
         83.3%,95.96% {transform:translate3d(0,-25%,0);}
       }
-      
+
       // 6 is the number of animation.
       // Here, there are 4 lines :
-      
+
       // 1 to 2
       // 2 to 3
       // 3 to 4
       // 4 to 3
       // 3 to 2
       // 2 to 1
-      
+
       // 6x + 6y = 100 (100% duration)
-      
-      // HERE : 
+
+      // HERE :
       // y = 4 -> Animation between two lines
       // x = 12.66 -> Time spent on a line
-      
+
       // You can define a value and calculate the other if you want change speed or the number of lines
 
 }
@@ -209,8 +217,8 @@ body{
 .firstSec{
     height: 100vh;
     align-items: center;
-    padding: 0 6em;    
-    
+    padding: 0 6em;
+
     .qoute{
         font-size: 6em;
         font-family: 'Poppins', sans-serif;
@@ -220,7 +228,7 @@ body{
         width: 100%;
         display: flex;
         justify-content: center;
-        
+
 
         p:nth-child(5) {
             color: $myGreen;
@@ -245,32 +253,43 @@ body{
         height: 80%;
         width: 100%;
 
-        div{
-            margin: 0.3em;
 
+        .left, .right{
+          margin: 0.3rem;
+          overflow: hidden;
+          position: relative;
+        }
+        .overlay {
+          position: absolute;
+          left: 100%;
+          right: 0;
+          background-color: rgba($color: #000000, $alpha: 0.6);
+          overflow: hidden;
+          width: 0;
+          height: 100%;
+          transition: .5s ease;
         }
 
-        .overlay{
-            display: block;
-            position: absolute;
-            height: 100%;
+        .left:hover, .right:hover, .overlay{
             width: 100%;
-            background-color: rgba($color: #000000, $alpha: 0.5);
+            left: 0;
         }
         .left{
             height: 100%;
-            width: 100%;
+            width: 50%;
             background: url('https://images.unsplash.com/photo-1509343256512-d77a5cb3791b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
             background-repeat: no-repeat;
             background-size: cover;
+           
         }
         .right{
             height: 100%;
-            width: 100%;
+            width: 50%;
             background: url('https://images.unsplash.com/photo-1495121553079-4c61bcce1894?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzV8fHBob3RvZ3JhcGh5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60');
             background-repeat: no-repeat;
             background-size: cover;
             background-position: 50%;
+         
         }
     }
 }
