@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/honeshpareek.github.io/static/css/main.86cb8316.css",
-    "main.js": "/honeshpareek.github.io/static/js/main.f07cce79.js",
-    "index.html": "/honeshpareek.github.io/index.html"
+    "main.css": "/honeshraipareek/static/css/main.86cb8316.css",
+    "main.js": "/honeshraipareek/static/js/main.29e1ea72.js",
+    "index.html": "/honeshraipareek/index.html"
   },
   "entrypoints": [
     "static/css/main.86cb8316.css",
-    "static/js/main.f07cce79.js"
+    "static/js/main.29e1ea72.js"
   ]
 }
